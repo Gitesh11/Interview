@@ -29,13 +29,13 @@ getAllProfiles(){
 onSubmit(form){
   console.log(form);
   
-// let model ={
-//   "firstName": "Sahil",
-//   "lastName": "Joshi",
-//   "technology": "ASP.Net",
-//   "noofYearsExperience": 4
-// }
-this._service.addProfiles(form).subscribe((result)=>{
+let model ={
+  "firstName":form.firstName ,
+  "lastName": form.lastName,
+  "technology": form.technology,
+  "noofYearsExperience": form.noofYearsExperience
+}
+this._service.addProfiles(model).subscribe((result)=>{
   console.log(result);
   
 }, error => {
