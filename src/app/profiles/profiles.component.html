@@ -1,0 +1,38 @@
+<p>profiles works!</p>
+<div *ngFor = "let item of allprofiles; let i = index">
+<div *ngIf="i<10">
+    <p>{{item.id}}</p>
+    <p>{{item.firstName}}</p>
+    <p>{{item.lastName}}</p>
+    <p>{{item.noofYearsExperience}}</p>
+    <p>{{item.technology}}</p>
+</div>
+</div>
+<div>
+    <form name="form" (ngSubmit)="onSubmit(myform.form.value)" #myform="ngForm" novalidate>  
+        <div class="form-group">
+            <label for="firstName">firstName</label>
+            <input type="text" class="form-control" name="firstName" [(ngModel)]="model.firstName" #firstName="ngModel" required />  
+        </div> 
+        <div class="form-group">
+            <label for="lastName">lastName</label>
+            <input type="text" class="form-control" name="lastName" [(ngModel)]="model.lastName" #lastName="ngModel" required />  
+        </div> 
+        <div class="form-group">
+            <label for="technology">technology</label>
+            <input type="text" class="form-control" name="technology" [(ngModel)]="model.technology" #technology="ngModel" required />  
+        </div> 
+        <div class="form-group">
+            <label for="experience">noofYearsExperience</label>
+            <input type="text" class="form-control" name="noofYearsExperience" [(ngModel)]="model.noofYearsExperience" #noofYearsExperience="ngModel" required />  
+        </div>  
+        <button type="submit" class="btn btn-success">Submit</button>  
+      </form>  
+</div>
+<div>
+    <input type="text" [(ngModel)]="id">
+    <button class="btn btn-success" (click)="getById()">Search</button>
+</div>
+<div>
+    <h1>{{this.data?.firstName}}</h1>
+</div>
